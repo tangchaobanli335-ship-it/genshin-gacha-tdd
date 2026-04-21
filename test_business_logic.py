@@ -18,7 +18,7 @@ class TestGachaProbability:
         expected_prob = 0.066
         for pull in range(74, 90):
             prob = calculate_gacha_probability(pull)
-            assert prob == expected_prob, f"第{pull}抽概率错误"
+            assert prob == pytest.approx(expected_prob), f"第{pull}抽概率错误"
             expected_prob += 0.06
 
     def test_hard_pity_guarantee(self):
